@@ -1,0 +1,16 @@
+{
+  "name": "blocks-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.118.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "link": "cp node_modules/three/build/three.min.js public/three.min.js",
+    "serve": "http-server -w"
+  }
+}
