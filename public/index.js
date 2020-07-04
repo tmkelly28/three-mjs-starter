@@ -75,7 +75,7 @@
     pointer.position.y = y
   }
 
-  const onMouseDown = event => {
+  const onMouseDown = () => {
     raycaster.setFromCamera(mouse, camera)
     const intersects = raycaster.intersectObject(gridHelper)
     if (!intersects.length) return
