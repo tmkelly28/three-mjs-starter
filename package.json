@@ -10,7 +10,7 @@
     "http-server": "^0.12.3"
   },
   "scripts": {
-    "link": "cp node_modules/three/build/three.min.js public/three.min.js",
+    "link": "sh bin/init.sh",
     "serve": "http-server -w"
   }
 }
