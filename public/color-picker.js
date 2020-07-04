@@ -44,15 +44,8 @@ window.colorPicker = (({ EventEmitter }) => {
     }
   }
 
-  const colors = [
-    new Color('red'), 
-    new Color('orange'),
-    new Color('yellow'),
-    new Color('green'),
-    new Color('blue'),
-    new Color('indigo'),
-    new Color('violet'),
-  ]
+  const colorNames = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+  const colors = colorNames.map(colorName => new Color(colorName))
 
   return new ColorPicker(colors)
 })(window)
