@@ -11,6 +11,6 @@
   },
   "scripts": {
     "link": "sh bin/init.sh",
-    "serve": "http-server -w"
+    "serve": "http-server -w public node_modules"
   }
 }
