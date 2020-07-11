@@ -1,5 +1,5 @@
 import {camera, renderer, mouse, controls, scene} from '/init.mjs'
-import cube from '/cube.mjs'
+import Cube from '/cube.mjs'
 
 const onWindowResize = () => {
   camera.aspect = window.innerWidth / window.innerHeight
@@ -25,6 +25,7 @@ const animate = () => {
 window.addEventListener('resize', onWindowResize, false)
 window.addEventListener('mousemove', onMouseMove, false)
 
-cube({ x: 1, y: 1, z: 1 })
+const cube = new Cube(1, 1, 1)
+cube.render(scene)
 
 animate()
