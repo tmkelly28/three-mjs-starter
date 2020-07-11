@@ -6,15 +6,3 @@ body {
 canvas {
   display: block;
 }
-
-.color-box {
-  height: 20px;
-  width: 20px;
-  position: fixed;
-  border: 1px solid #fff;
-  transition: all 0.5s ease;
-}
-
-.color-box:hover {
-  border-radius: 50%;
-}

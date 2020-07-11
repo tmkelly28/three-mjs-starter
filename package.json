@@ -1,16 +1,13 @@
 {
-  "name": "blocks-builder",
+  "name": "three-starter",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-    "three": "^0.118.3"
-  },
   "devDependencies": {
     "http-server": "^0.12.3"
   },
   "scripts": {
     "link": "sh bin/init.sh",
-    "serve": "http-server -w public node_modules"
+    "serve": "http-server -w"
   }
 }

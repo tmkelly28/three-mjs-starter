@@ -1,37 +1,5 @@
-import * as THREE from '../node_modules/three/build/three.module'
-import * as OrbitControls from '../node_modules/three/examples/jsm/controls/OrbitControls' 
-
-const scene = new THREE.Scene()
-scene.background = new THREE.Color(0xeeeeee)
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
-
-const renderer = new THREE.WebGLRenderer()
-renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
-
-const raycaster = new THREE.Raycaster()
-const mouse = new THREE.Vector2()
-
-const controls = new OrbitControls(camera, renderer.domElement)
-// controls.update() must be called after any manual changes to the camera's transform
-camera.position.set(10, 10, 5)
-controls.update()
-
-const gridHelper = new THREE.GridHelper(10, 10)
-scene.add(gridHelper)
-
-const createCube = ({ x, y, z }) => {
-  const geometry = new THREE.BoxBufferGeometry(1, 1)
-  const material = new THREE.MeshBasicMaterial({ color: 0x333333 })
-  const mesh = new THREE.Mesh(geometry, material)
-
-  mesh.position.x = x
-  mesh.position.y = y
-  mesh.position.z = z
-  scene.add(mesh)
-
-  return mesh
-}
+import {camera, renderer, mouse, controls, scene} from '/init.mjs'
+import cube from '/cube.mjs'
 
 const onWindowResize = () => {
   camera.aspect = window.innerWidth / window.innerHeight
@@ -46,9 +14,6 @@ const onMouseMove = event => {
   mouse.y = - (event.clientY / window.innerHeight) * 2 + 1
 }
 
-const onMouseDown = () => {
-}
-
 const animate = () => {
   requestAnimationFrame(animate)
 
@@ -59,6 +24,7 @@ const animate = () => {
 
 window.addEventListener('resize', onWindowResize, false)
 window.addEventListener('mousemove', onMouseMove, false)
-window.addEventListener('mousedown', onMouseDown, false)
+
+cube({ x: 1, y: 1, z: 1 })
 
 animate()
